@@ -1,11 +1,14 @@
 package EXwiTAns;
 //
+import java.util.Arrays;
+import java.util.Comparator;
+
 import static EXwiTAns.Array_Printer.printArray;
 
 public class Solution {
     public static int getSecondLargest(int[] arr) {
         // code here
-        int n = arr.length;
+      /*  int n = arr.length;
         int[] a = arr;
         for (int i = 0; i < n - 1; i++) {
             //swapped = false;
@@ -25,6 +28,18 @@ public class Solution {
             if(arr[q]!=arr[0]){
                 return arr[q];
             }
+        }
+        return -1;*/
+
+        int[] b= Arrays.stream(arr)
+                .boxed()
+                .distinct()
+                .sorted(Comparator.reverseOrder())
+                .mapToInt(Integer::intValue)
+                .toArray();
+
+        if(b.length>1){
+            return b[1];
         }
         return -1;
     }
