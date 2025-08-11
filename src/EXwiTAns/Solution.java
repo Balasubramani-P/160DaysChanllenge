@@ -2,10 +2,26 @@ package EXwiTAns;
 //
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Objects;
 
 import static EXwiTAns.Array_Printer.printArray;
 
 public class Solution {
+    int x=10;
+
+//    @Override
+//    public boolean equals(Object o) {
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Solution solution = (Solution) o;
+//        return x == solution.x && y == solution.y;
+//    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
+    }
+
+    int y=10;
     public static int getSecondLargest(int[] arr) {
         // code here
       /*  int n = arr.length;
